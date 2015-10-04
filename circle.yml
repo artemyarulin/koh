@@ -1,0 +1,6 @@
+test:
+  override:
+    - lein doo node unit-node once
+    - lein doo node integration-node once
+    - lein doo phantom unit-browser once
+    - lein doo phantom integration-browser once
