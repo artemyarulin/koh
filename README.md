@@ -1,10 +1,13 @@
 # koh
+
+[![Circle CI](https://circleci.com/gh/artemyarulin/koh.svg?style=svg)](https://circleci.com/gh/artemyarulin/koh)
+
 Write cross platform ClojureScript without noticing it! Container of all platform depended code for ClojureSript with support of browser, node and react-native environment
 
 # Functions
 
 - `err(str)` - returns platform depended error object (`js/Error` in case of JS environment)
-- `is-err?(obj)` - returns `true` if object an error
+- `err?(obj)` - returns `true` if object an error
 - `parse-json(str)` - parses string and returns either parsed object or `err` object
 - `to-json(obj)` - converts object to JSON string
 - `http(method headers data url cb)` - makes an HTTP request with specified parameters. Returns `core.async` channel which would contains either `err` or response object
