@@ -1,6 +1,4 @@
-# koh
-
-[![Circle CI](https://circleci.com/gh/artemyarulin/koh.svg?style=svg)](https://circleci.com/gh/artemyarulin/koh)
+# koh [![Circle CI](https://circleci.com/gh/artemyarulin/koh.svg?style=svg)](https://circleci.com/gh/artemyarulin/koh)
 
 Write cross platform ClojureScript without noticing it! Container of all platform depended code for ClojureSript with support of browser, node and react-native environment
 
