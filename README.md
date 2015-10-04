@@ -6,6 +6,7 @@ Write cross platform ClojureScript without noticing it! Container of all platfor
 
 - `err(str)` - returns platform depended error object (`js/Error` in case of JS environment)
 - `err?(obj)` - returns `true` if object an error
+- `enable-print!()` - enable printing to console
 - `parse-json(str)` - parses string and returns either parsed object or `err` object
 - `to-json(obj)` - converts object to JSON string
 - `http(method headers data url cb)` - makes an HTTP request with specified parameters. Returns `core.async` channel which would contains either `err` or response object

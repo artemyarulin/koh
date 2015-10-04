@@ -1,11 +1,13 @@
 (ns ^:figwheel-always test.runner
   (:require [cljs.test :as test]
             [doo.runner :refer-macros [doo-tests]]
-            [koh.core :refer [cur-platform]]
+            [koh.core :refer [cur-platform enable-print!]]
             ;; Unit
             [test.unit.core]
             ;; Integration
             [test.integration.core]))
+
+(enable-print!)
 
 (when (= :node cur-platform)
   (.on js/process

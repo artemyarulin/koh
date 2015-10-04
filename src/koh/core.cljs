@@ -26,6 +26,17 @@
                         (and (exists? js/module) (exists? (.-exports js/module))) :node
                         :else (throw (err "Not supported platform"))))
 
+(defn enable-print! []
+  "Enables printing to console"
+  (set! *print-newline* false)
+  (set! *print-fn*
+    (fn [& args]
+      (.apply (.-log js/console) js/console (into-array args))))
+  (set! *print-err-fn*
+    (fn [& args]
+      (.apply (.-error js/console) js/console (into-array args))))
+  nil)
+
 (defn browser-http [method headers body url]
   "Browser transport, for debugging purpose only. Consider to run your
   browser with --disable-web-security in order to allow cross sites
@@ -76,3 +87,5 @@
     :browser browser-http
     :node node-http
     (throw (err "Unsupported platform"))))
+
+(set! *main-cli-fn* (constantly nil))

@@ -16,7 +16,6 @@
                                          :output-dir "target"
                                          :asset-path "../target"
                                          :target :nodejs
-                                         :hashbang false
                                          :main test.runner}}
                        :unit-browser {:source-paths ["src" "tests"]
                                       :compiler {:optimizations :simple
