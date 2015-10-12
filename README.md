@@ -10,14 +10,14 @@ Write cross platform ClojureScript without noticing it! Container of all platfor
 - `parse-json(str)` - parses string and returns either parsed object or `err` object
 - `to-json(obj)` - converts object to JSON string
 - `http(method headers data url cb)` - makes an HTTP request with specified parameters. Returns `core.async` channel which would contains either `err` or response object
-- `xpath(str xpath-queries is-html)` - runs xpath queries against string
+- `xpath(html? string xpath-queries)` - runs xpath queries against string
 
 # React Native
 
 Because RN using `JSCore` environments which is just a JavaScript interpreter and doesn't have many features from browser object model we have to use couple of additional RN plugins:
 
-- [react-native-xml](https://github.com/artemyarulin/react-native-xml) - For making XPath queries
-- [react-native-raw-http](https://github.com/artemyarulin/react-native-raw-http) - To get access to low level HTTP API
+- [react-native-xml](https://github.com/artemyarulin/react-native-xml) - For making XPath queries. It is expected to have `GLOBAL.rnmxmlQueryHTML` and `GLOBAL.rnmxmlQueryXml` to be available
+- [react-native-raw-http](https://github.com/artemyarulin/react-native-raw-http) - To get access to low level HTTP API. Not used yet, we are using standard `fetch` object for now
 
 # Clojure
 
@@ -25,4 +25,4 @@ Definitely we will support it.
 
 # To think about:
 
-- Should we really add `core.async` dependency? If we will stick with callback style we can make life easier for somebody? Maybe two different distribution? It is any how possible?
+- How we can run tests on RN? Write runner for doo maybe?

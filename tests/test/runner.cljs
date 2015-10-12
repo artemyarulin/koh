@@ -4,8 +4,9 @@
             [koh.core :refer [cur-platform enable-print!]]
             ;; Unit
             [test.unit.core]
+            [test.unit.xpath]
             ;; Integration
-            [test.integration.core]))
+            [test.integration.http]))
 
 (enable-print!)
 
@@ -18,6 +19,7 @@
 (goog-define suite "none")
 
 (case suite
-  "unit" (doo-tests 'test.unit.core)
-  "integration" (doo-tests 'test.integration.core)
+  "unit" (doo-tests 'test.unit.core
+                    'test.unit.xpath)
+  "integration" (doo-tests 'test.integration.http)
   nil)

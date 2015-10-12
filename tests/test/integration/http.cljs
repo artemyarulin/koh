@@ -1,4 +1,4 @@
-(ns test.integration.core
+(ns test.integration.http
   (:require-macros [cljs.core.async.macros :refer [go]])
   (:require [koh.core :refer [http parse-json err?]]
             [cljs.core.async :refer [<!]]
