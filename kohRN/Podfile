@@ -1,0 +1,12 @@
+platform :ios, '8.0'
+
+target 'kohRN', :exclusive => true do
+    pod 'React/Core', '0.11.0'
+    pod 'React/RCTNetwork','0.11.0'
+    pod 'react-native-eval',:path => 'node_modules/react-native-eval'
+    pod 'react-native-xml', '0.1.0'
+end
+
+target 'kohRNTests' do
+  pod 'AGAsyncTestHelper', '~> 0.2.2'
+end

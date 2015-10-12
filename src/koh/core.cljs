@@ -11,8 +11,8 @@
 (def err? err/err?)
 
 (def cur-platform (cond (and (exists? js/window) (exists? js/document)) :browser
+                        (and (exists? js/GLOBAL)) :rnative
                         (and (exists? js/module) (exists? (.-exports js/module))) :node
-                        (and (exists? js/React) (exists? js/process) (exists? js/fetch)) :rnative
                         :else (throw (err "Not supported platform"))))
 
 (def http

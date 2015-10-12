@@ -1,0 +1,495 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		96008DBF1BCBE9ED005A7EC1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96008DBE1BCBE9ED005A7EC1 /* main.m */; };
+		96008DC21BCBE9ED005A7EC1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96008DC11BCBE9ED005A7EC1 /* AppDelegate.m */; };
+		96008DD81BCBE9ED005A7EC1 /* kohRNTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96008DD71BCBE9ED005A7EC1 /* kohRNTests.m */; };
+		96008DE61BCBEB15005A7EC1 /* js in Resources */ = {isa = PBXBuildFile; fileRef = 96008DE51BCBEB15005A7EC1 /* js */; settings = {ASSET_TAGS = (); }; };
+		963AECDC1BCBEBAD0065762A /* JSEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = 963AECDB1BCBEBAD0065762A /* JSEnvironment.m */; settings = {ASSET_TAGS = (); }; };
+		C16D4498363F806A44466639 /* libPods-kohRNTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C30D127EAAF9D41CEC63F1 /* libPods-kohRNTests.a */; };
+		E24C05D1984DF89415B7472C /* libPods-kohRN.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77A3A75389E564BEF6DFDCB6 /* libPods-kohRN.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		96008DD41BCBE9ED005A7EC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96008DB21BCBE9ED005A7EC1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 96008DB91BCBE9ED005A7EC1;
+			remoteInfo = kohRN;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		076F49FAF81A025E7D154F29 /* Pods-kohRNTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kohRNTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-kohRNTests/Pods-kohRNTests.release.xcconfig"; sourceTree = "<group>"; };
+		34C30D127EAAF9D41CEC63F1 /* libPods-kohRNTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-kohRNTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		77A3A75389E564BEF6DFDCB6 /* libPods-kohRN.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-kohRN.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8975715D76C5334F763EB82A /* Pods-kohRN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kohRN.release.xcconfig"; path = "Pods/Target Support Files/Pods-kohRN/Pods-kohRN.release.xcconfig"; sourceTree = "<group>"; };
+		96008DBA1BCBE9ED005A7EC1 /* kohRN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kohRN.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		96008DBE1BCBE9ED005A7EC1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		96008DC01BCBE9ED005A7EC1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		96008DC11BCBE9ED005A7EC1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		96008DCE1BCBE9ED005A7EC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96008DD31BCBE9ED005A7EC1 /* kohRNTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kohRNTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		96008DD71BCBE9ED005A7EC1 /* kohRNTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = kohRNTests.m; sourceTree = "<group>"; };
+		96008DD91BCBE9ED005A7EC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96008DE51BCBEB15005A7EC1 /* js */ = {isa = PBXFileReference; lastKnownFileType = folder; path = js; sourceTree = "<group>"; };
+		963AECDA1BCBEBAD0065762A /* JSEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSEnvironment.h; sourceTree = "<group>"; };
+		963AECDB1BCBEBAD0065762A /* JSEnvironment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSEnvironment.m; sourceTree = "<group>"; };
+		DB6957093F8776271AB31D5C /* Pods-kohRNTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kohRNTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kohRNTests/Pods-kohRNTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E4B10D9F826078ACAC959220 /* Pods-kohRN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kohRN.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kohRN/Pods-kohRN.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		96008DB71BCBE9ED005A7EC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E24C05D1984DF89415B7472C /* libPods-kohRN.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96008DD01BCBE9ED005A7EC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C16D4498363F806A44466639 /* libPods-kohRNTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B3BADC8F3B4012B821DF89D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E4B10D9F826078ACAC959220 /* Pods-kohRN.debug.xcconfig */,
+				8975715D76C5334F763EB82A /* Pods-kohRN.release.xcconfig */,
+				DB6957093F8776271AB31D5C /* Pods-kohRNTests.debug.xcconfig */,
+				076F49FAF81A025E7D154F29 /* Pods-kohRNTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2F63F1CCD384D128C37E97C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				77A3A75389E564BEF6DFDCB6 /* libPods-kohRN.a */,
+				34C30D127EAAF9D41CEC63F1 /* libPods-kohRNTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		96008DB11BCBE9ED005A7EC1 = {
+			isa = PBXGroup;
+			children = (
+				96008DBC1BCBE9ED005A7EC1 /* kohRN */,
+				96008DD61BCBE9ED005A7EC1 /* kohRNTests */,
+				96008DBB1BCBE9ED005A7EC1 /* Products */,
+				1B3BADC8F3B4012B821DF89D /* Pods */,
+				2F63F1CCD384D128C37E97C4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		96008DBB1BCBE9ED005A7EC1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				96008DBA1BCBE9ED005A7EC1 /* kohRN.app */,
+				96008DD31BCBE9ED005A7EC1 /* kohRNTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		96008DBC1BCBE9ED005A7EC1 /* kohRN */ = {
+			isa = PBXGroup;
+			children = (
+				963AECDA1BCBEBAD0065762A /* JSEnvironment.h */,
+				963AECDB1BCBEBAD0065762A /* JSEnvironment.m */,
+				96008DBD1BCBE9ED005A7EC1 /* Supporting Files */,
+			);
+			path = kohRN;
+			sourceTree = "<group>";
+		};
+		96008DBD1BCBE9ED005A7EC1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				96008DC01BCBE9ED005A7EC1 /* AppDelegate.h */,
+				96008DC11BCBE9ED005A7EC1 /* AppDelegate.m */,
+				96008DCE1BCBE9ED005A7EC1 /* Info.plist */,
+				96008DBE1BCBE9ED005A7EC1 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		96008DD61BCBE9ED005A7EC1 /* kohRNTests */ = {
+			isa = PBXGroup;
+			children = (
+				96008DE51BCBEB15005A7EC1 /* js */,
+				96008DD71BCBE9ED005A7EC1 /* kohRNTests.m */,
+				96008DD91BCBE9ED005A7EC1 /* Info.plist */,
+			);
+			path = kohRNTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		96008DB91BCBE9ED005A7EC1 /* kohRN */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96008DDC1BCBE9ED005A7EC1 /* Build configuration list for PBXNativeTarget "kohRN" */;
+			buildPhases = (
+				90D7AEB85D8912812FD49C7A /* Check Pods Manifest.lock */,
+				96008DB61BCBE9ED005A7EC1 /* Sources */,
+				96008DB71BCBE9ED005A7EC1 /* Frameworks */,
+				96008DB81BCBE9ED005A7EC1 /* Resources */,
+				23E4898325A7C9FBE0F8625C /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = kohRN;
+			productName = kohRN;
+			productReference = 96008DBA1BCBE9ED005A7EC1 /* kohRN.app */;
+			productType = "com.apple.product-type.application";
+		};
+		96008DD21BCBE9ED005A7EC1 /* kohRNTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96008DDF1BCBE9ED005A7EC1 /* Build configuration list for PBXNativeTarget "kohRNTests" */;
+			buildPhases = (
+				439E687BD85027FDBE1E4651 /* Check Pods Manifest.lock */,
+				96008DCF1BCBE9ED005A7EC1 /* Sources */,
+				96008DD01BCBE9ED005A7EC1 /* Frameworks */,
+				96008DD11BCBE9ED005A7EC1 /* Resources */,
+				21A3AC112175CC20F6A4E61E /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				96008DD51BCBE9ED005A7EC1 /* PBXTargetDependency */,
+			);
+			name = kohRNTests;
+			productName = kohRNTests;
+			productReference = 96008DD31BCBE9ED005A7EC1 /* kohRNTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		96008DB21BCBE9ED005A7EC1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = koh;
+				TargetAttributes = {
+					96008DB91BCBE9ED005A7EC1 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					96008DD21BCBE9ED005A7EC1 = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = 96008DB91BCBE9ED005A7EC1;
+					};
+				};
+			};
+			buildConfigurationList = 96008DB51BCBE9ED005A7EC1 /* Build configuration list for PBXProject "kohRN" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 96008DB11BCBE9ED005A7EC1;
+			productRefGroup = 96008DBB1BCBE9ED005A7EC1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				96008DB91BCBE9ED005A7EC1 /* kohRN */,
+				96008DD21BCBE9ED005A7EC1 /* kohRNTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		96008DB81BCBE9ED005A7EC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96008DD11BCBE9ED005A7EC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96008DE61BCBEB15005A7EC1 /* js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		21A3AC112175CC20F6A4E61E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-kohRNTests/Pods-kohRNTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		23E4898325A7C9FBE0F8625C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-kohRN/Pods-kohRN-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		439E687BD85027FDBE1E4651 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		90D7AEB85D8912812FD49C7A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		96008DB61BCBE9ED005A7EC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				963AECDC1BCBEBAD0065762A /* JSEnvironment.m in Sources */,
+				96008DC21BCBE9ED005A7EC1 /* AppDelegate.m in Sources */,
+				96008DBF1BCBE9ED005A7EC1 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96008DCF1BCBE9ED005A7EC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96008DD81BCBE9ED005A7EC1 /* kohRNTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		96008DD51BCBE9ED005A7EC1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 96008DB91BCBE9ED005A7EC1 /* kohRN */;
+			targetProxy = 96008DD41BCBE9ED005A7EC1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		96008DDA1BCBE9ED005A7EC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		96008DDB1BCBE9ED005A7EC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		96008DDD1BCBE9ED005A7EC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4B10D9F826078ACAC959220 /* Pods-kohRN.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = kohRN/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = koh.kohRN;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		96008DDE1BCBE9ED005A7EC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8975715D76C5334F763EB82A /* Pods-kohRN.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = kohRN/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = koh.kohRN;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		96008DE01BCBE9ED005A7EC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB6957093F8776271AB31D5C /* Pods-kohRNTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = kohRNTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = koh.kohRNTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kohRN.app/kohRN";
+			};
+			name = Debug;
+		};
+		96008DE11BCBE9ED005A7EC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 076F49FAF81A025E7D154F29 /* Pods-kohRNTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = kohRNTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = koh.kohRNTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/kohRN.app/kohRN";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		96008DB51BCBE9ED005A7EC1 /* Build configuration list for PBXProject "kohRN" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96008DDA1BCBE9ED005A7EC1 /* Debug */,
+				96008DDB1BCBE9ED005A7EC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96008DDC1BCBE9ED005A7EC1 /* Build configuration list for PBXNativeTarget "kohRN" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96008DDD1BCBE9ED005A7EC1 /* Debug */,
+				96008DDE1BCBE9ED005A7EC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96008DDF1BCBE9ED005A7EC1 /* Build configuration list for PBXNativeTarget "kohRNTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96008DE01BCBE9ED005A7EC1 /* Debug */,
+				96008DE11BCBE9ED005A7EC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 96008DB21BCBE9ED005A7EC1 /* Project object */;
+}

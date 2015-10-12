@@ -18,8 +18,14 @@
 
 (goog-define suite "none")
 
+(defn ^:export test-unit []
+  (doo-tests 'test.unit.core
+             'test.unit.xpath))
+
+(defn ^:exrpot test-integration []
+  (doo-tests 'test.integration.http))
+
 (case suite
-  "unit" (doo-tests 'test.unit.core
-                    'test.unit.xpath)
-  "integration" (doo-tests 'test.integration.http)
+  "unit" (test-unit)
+  "integration" (test-integration)
   nil)

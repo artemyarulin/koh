@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "start": "./node_modules/react-native/packager/packager.sh --reset-cache --projectRoots $(PWD)/node_modules --root $(PWD)/js --assetRoots js",
+    "build-react": "wget -O /tmp/react.js \"http://localhost:8081/index.ios.bundle?dev=0&minify=1\"",
+    "build-tests": "(cd .. && lein cljsbuild once integration-browser) && app=\"kohRNTests/js/tests.js\" && cat /tmp/react.js > $app && echo -e \"\n;;;\n\" >> $app && cat ../target/integration.app.js >> $app",
+    "build": "npm run build-react && npm run build-tests"
+  },
+  "dependencies": {
+    "react-native": "0.11.0",
+    "react-native-eval": "0.1.0"
+  }
+}
