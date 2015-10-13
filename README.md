@@ -1,4 +1,5 @@
-# koh [![Circle CI](https://circleci.com/gh/artemyarulin/koh.svg?style=svg)](https://circleci.com/gh/artemyarulin/koh)
+# koh [![Circle CI](https://circleci.com/gh/artemyarulin/koh.svg?style=svg)](https://circleci.com/gh/artemyarulin/koh) 
+[![Clojars Project](http://clojars.org/koh/latest-version.svg)](http://clojars.org/koh)
 
 Container of all platform depended code for ClojureSript with support of browser, node and react-native environment
 
@@ -22,7 +23,3 @@ Because RN using `JSCore` environments which is just a JavaScript interpreter an
 # Clojure
 
 Definitely we will support it.
-
-# To think about:
-
-- How we can run tests on RN? Write runner for doo maybe?
