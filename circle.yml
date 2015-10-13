@@ -12,11 +12,11 @@ dependencies:
     - sudo chmod a+x /bin/lein && lein
     - brew install phantomjs
     - brew install node
+    - npm install xpath xmldom
 test:
   override:
-    - npm install xpath xmldom
     - lein doo node unit-node once
     - lein doo node integration-node once
     - lein doo phantom unit-browser once
     - lein doo phantom integration-browser once
-    - cd kohRN && xcodebuild -workspace kohRN.xcworkspace/ -scheme kohRN -destination platform=iOS Simulator,OS=9.0,name=iPhone 6s -sdk iphonesimulator test
+    - cd kohRN && xcodebuild -workspace kohRN.xcworkspace -scheme kohRN -destination platform='iOS Simulator,OS=9.0,name=iPhone 6s' -sdk iphonesimulator test
