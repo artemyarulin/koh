@@ -47,13 +47,13 @@
 (defn rnative-http [method headers body url]
   "React native HTTP transport. For now we rely on standard fetch
   function, later on we will move to react-native-raw-http"
-    (let [out (async/chan)
-          props-base {:method method
-                      :headers (clj->js headers)}
-          props (if body
-                  (assoc props-base :body body)
-                  props-base)
-          req (js/fetch url (clj->js props))]
-      (.catch req #(async/onto-chan out [(err (.-message %))]))
-      (.then req (fn[resp](.then (.text resp) (fn[data](async/onto-chan out [{(.-status resp) data}]))))
-      out)))
+  (let [out (async/chan)
+        props-base {:method method
+                    :headers (clj->js headers)}
+        props (if body
+                (assoc props-base :body body)
+                props-base)
+        req (js/fetch url (clj->js props))]
+    (.catch req #(async/onto-chan out [(err (.-message %))]))
+    (.then req (fn[resp](.then (.text resp) (fn[data](async/onto-chan out [{(.-status resp) data}])))))
+    out))

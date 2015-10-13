@@ -19,12 +19,12 @@
         finder (if html? js/rnmxmlQueryHtml js/rnmxmlQueryXml)
         cb (fn[res](if (err? res)
                      (async/onto-chan out [res])
-                     (async/onto-chan out [(zipmap (keys queries) res)])))]
-    (finder s (clj->js (vals queries)) cb)))
+                     (async/onto-chan out [(zipmap (keys queries) (js->clj res))])))]
+    (finder s (clj->js (vals queries)) cb)
+    out))
 
 (defn node-xpath [html? string queries]
-  (let [out (async/chan)
-        require (.-require js/module)
+  (let [require (.-require js/module)
         node-xpath (require "./xpath")
         node-xmldom (require "./xmldom")
         dom (.-DOMParser node-xmldom)
