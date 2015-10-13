@@ -33,7 +33,7 @@
                        :unit-node {:source-paths ["src" "tests"]
                                    :compiler {:optimizations :simple
                                               :language-in :ecmascript5
-                                              :language-out :ecmascript
+                                              :language-out :ecmascript5
                                               :main test.runner
                                               :target :nodejs
                                               :closure-defines {"test.runner.suite" "unit"}
