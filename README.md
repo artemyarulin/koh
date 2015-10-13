@@ -23,7 +23,3 @@ Because RN using `JSCore` environments which is just a JavaScript interpreter an
 # Clojure
 
 Definitely we will support it.
-
-# To think about:
-
-- How we can run tests on RN? Write runner for doo maybe?
