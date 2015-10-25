@@ -23,9 +23,17 @@
 
 (deftest parse-string-simple (async done (go
   (let [s "<doc a='V'>V2</doc>"
-        expected {:tag "doc"
+        expected {:tag :doc
                   :attrs {:a "V"}
                   :content ["V2"]}]
+    (is (= (<! (parse-xml s false)) expected)))
+    (done))))
+
+(deftest parse-string-defaults (async done (go
+  (let [s "<doc/>"
+        expected {:tag :doc
+                  :attrs {}
+                  :content []}]
     (is (= (<! (parse-xml s false)) expected)))
     (done))))
 
@@ -41,21 +49,21 @@
   </SyncFolderId>
   <MaxChangesReturned xmlns=\"http://schemas.microsoft.com/exchange/services/2006/messages\">20</MaxChangesReturned>
 </SyncFolderItems>"
-        expected {:tag "SyncFolderItems"
+        expected {:tag :SyncFolderItems
                   :attrs {:xmlns/xsi "http://www.w3.org/2001/XMLSchema-instance"
                           :xmlns/xsd "http://www.w3.org/2001/XMLSchema"}
-                  :content [{:tag "ItemShape"
+                  :content [{:tag :ItemShape
                              :attrs {:xmlns "http://schemas.microsoft.com/exchange/services/2006/messages"}
-                             :content [{:tag "BaseShape"
+                             :content [{:tag :BaseShape
                                         :attrs {:xmlns "http://schemas.microsoft.com/exchange/services/2006/types"}
                                         :content ["Default"]}]}
-                            {:tag "SyncFolderId"
+                            {:tag :SyncFolderId
                              :attrs {:xmlns "http://schemas.microsoft.com/exchange/services/2006/messages"}
-                             :content [{:tag "DistinguishedFolderId"
+                             :content [{:tag :DistinguishedFolderId
                                         :attrs {:Id "drafts"
                                                 :xmlns "http://schemas.microsoft.com/exchange/services/2006/types"}
                                         :content []}]}
-                            {:tag "MaxChangesReturned"
+                            {:tag :MaxChangesReturned
                              :attrs {:xmlns "http://schemas.microsoft.com/exchange/services/2006/messages"}
                              :content ["20"]}]}]
     (is (= (<! (parse-xml s false)) expected)))
