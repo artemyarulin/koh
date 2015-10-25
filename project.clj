@@ -7,9 +7,9 @@
                  [org.clojure/clojurescript "1.7.122"]
                  [org.clojure/core.async "0.1.346.0-17112a-alpha"]
                  [com.cemerick/piggieback "0.2.1"]
-                 [lein-doo "0.1.6-SNAPSHOT"]]
+                 [lein-doo "0.1.5"]]
   :plugins [[lein-cljsbuild "1.1.0"]
-            [lein-doo "0.1.6-SNAPSHOT"]
+            [lein-doo "0.1.5"]
             [lein-figwheel "0.4.0"]]
   :source-paths ["src" "tests"]
   :doo {:paths {:phantom "phantomjs --local-to-remote-url-access=true"}}
