@@ -4,7 +4,7 @@
             [koh.core :refer [cur-platform enable-print!]]
             ;; Unit
             [test.unit.core]
-            [test.unit.xpath]
+            [test.unit.xml]
             ;; Integration
             [test.integration.http]))
 
@@ -20,7 +20,7 @@
 
 (defn ^:export test-unit []
   (doo-tests 'test.unit.core
-             'test.unit.xpath))
+             'test.unit.xml))
 
 (defn ^:exrpot test-integration []
   (doo-tests 'test.integration.http))

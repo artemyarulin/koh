@@ -5,6 +5,9 @@
 (deftest err-test
   (is (err? (err "Error"))))
 
+(deftest err-null-test
+  (is (complement (err? nil))))
+
 (deftest print-should-work
   (enable-print!)
   (print "OK"))

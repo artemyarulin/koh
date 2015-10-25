@@ -3,7 +3,7 @@
             [koh.err :as err]
             [koh.json :as json]
             [koh.http :refer [node-http browser-http rnative-http]]
-            [koh.xpath :refer [browser-xpath rnative-xpath node-xpath]]))
+            [koh.xml :refer [browser-xpath rnative-xpath node-xpath rnative-parse]]))
 
 (def parse-json json/parse-json)
 (def to-json json/to-json)
@@ -34,6 +34,11 @@
     :browser browser-xpath
     :rnative rnative-xpath
     :node node-xpath
+    (throw (err "Unsupported platform"))))
+
+(def parse-xml
+  (case cur-platform
+    :rnative rnative-parse
     (throw (err "Unsupported platform"))))
 
 (defn enable-print! []

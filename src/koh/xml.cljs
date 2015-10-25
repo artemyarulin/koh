@@ -1,4 +1,4 @@
-(ns koh.xpath
+(ns koh.xml
   (:require [koh.err :refer [err?]]
             [cljs.core.async :as async]))
 
@@ -17,9 +17,10 @@
 (defn rnative-xpath [html? s queries]
   (let [out (async/chan)
         finder (if html? js/rnmxmlQueryHtml js/rnmxmlQueryXml)
-        cb (fn[res](if (err? res)
-                     (async/onto-chan out [res])
-                     (async/onto-chan out [(zipmap (keys queries) (js->clj res))])))]
+        cb (fn[err results]
+             (if (err? err)
+               (async/onto-chan out [err])
+               (async/onto-chan out [(zipmap (keys queries) (js->clj results))])))]
     (finder s (clj->js (vals queries)) cb)
     out))
 
@@ -33,3 +34,13 @@
                                (.select node-xpath q doc)))]
     (async/to-chan [(zipmap (keys queries)
                             (map find-nodes (vals queries)))])))
+
+(defn rnative-parse [string html?]
+  (let [out (async/chan)
+        parser js/rnmxmlParseString
+        cb (fn[err results]
+             (if (err? err)
+               (async/onto-chan out [err])
+               (async/onto-chan out [(js->clj results :keywordize-keys true)])))]
+    (parser string html? cb)
+    out))
