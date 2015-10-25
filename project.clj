@@ -12,7 +12,7 @@
             [lein-doo "0.1.5"]
             [lein-figwheel "0.4.0"]]
   :source-paths ["src" "tests"]
-  :doo {:paths {:phantom "phantomjs --local-to-remote-url-access=true"}}
+  :doo {:paths {:phantom "tests/phantom.sh"}}
   :figwheel {:nrepl-port 6800}
   :cljsbuild {:builds {:repl {:figwheel {:load-warninged-code true}
                               :source-paths ["src" "tests"]
