@@ -18,7 +18,7 @@ Container of all platform depended code for ClojureSript with support of browser
 
 Because RN using `JSCore` environments which is just a JavaScript interpreter and doesn't have many features from browser object model we have to use couple of additional RN plugins:
 
-- [react-native-xml](https://github.com/artemyarulin/react-native-xml) - For making XPath queries. It is expected to have `GLOBAL.rnmxmlQueryHTML` and `GLOBAL.rnmxmlQueryXml` to be available
+- [react-native-xml](https://github.com/artemyarulin/react-native-xml) - For making XPath queries. It is expected to have `GLOBAL.rnmxmlQueryHTML`,`GLOBAL.rnmxmlQueryXml` and `GLOBAL.rnmxmlParseString` to be available
 - [react-native-raw-http](https://github.com/artemyarulin/react-native-raw-http) - To get access to low level HTTP API. Not used yet, we are using standard `fetch` object for now
 
 # Clojure
