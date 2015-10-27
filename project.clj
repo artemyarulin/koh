@@ -1,4 +1,4 @@
-(defproject koh "0.1.0"
+(defproject koh "0.1.1"
   :description "Container of all platform depended code for ClojureSript with support of browser, node and react-native environment"
   :url "https://github.com/artemyarulin/koh"
   :license {:name "Eclipse Public License"

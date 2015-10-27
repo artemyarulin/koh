@@ -14,33 +14,37 @@
                         (and (exists? js/GLOBAL) (exists? js/Text) (exists? js/Image)) :rnative
                         (and (exists? js/module) (exists? (.-exports js/module))) :node))
 
-(def http
+(defmulti http
   "HTTP transport for the current platform. Accepts method, headers, body and url.
-   Returns channel with either error or map {http-response-code
-   response}"
-  (case cur-platform
-    :browser browser-http
-    :node node-http
-    :rnative rnative-http
-    (throw (err "Unsupported platform"))))
+   Returns channel with either error or map {http-response-code response}"
+  (constantly cur-platform))
 
-(def xpath
+(defmethod http :browser [& args] (apply browser-http args))
+(defmethod http :node [& args] (apply node-http args))
+(defmethod http :rnative [& args] (apply rnative-http args))
+(defmethod http :default [& args] (throw (err (str "Unsupported platform: " cur-platform))))
+
+(defmulti xpath
   "XPath query for the current platform. Accepts html? string queries
   where queries is a dictionary with xpath queries as values. Returns
   channel with eiter error or dictionary with values replaced with
   found value"
-  (case cur-platform
-    :browser browser-xpath
-    :rnative rnative-xpath
-    :node node-xpath
-    (throw (err "Unsupported platform"))))
+  (constantly cur-platform))
 
-(def parse-xml
-  (case cur-platform
-    :browser browser-parse
-    :rnative rnative-parse
-    :node node-parse
-    (throw (err "Unsupported platform"))))
+(defmethod xpath :browser [& args] (apply browser-xpath args))
+(defmethod xpath :rnative [& args] (apply rnative-xpath args))
+(defmethod xpath :node [& args] (apply node-xpath args))
+(defmethod xpath :default [& args] (throw (err "Unsupported platform")))
+
+(defmulti parse-xml
+  "Parses xml/html and returns similar data structures as clojure data.xml
+  Accepts string and html? flag"
+  (constantly cur-platform))
+
+(defmethod parse-xml :browser [& args] (apply browser-parse args))
+(defmethod parse-xml :rnative [& args] (apply rnative-parse args))
+(defmethod parse-xml :node [& args] (apply node-parse args))
+(defmethod parse-xml :default [& args] (throw (err "Unsupported platform")))
 
 (defn enable-print! []
   "Enables printing to console"
