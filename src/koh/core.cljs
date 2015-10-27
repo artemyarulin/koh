@@ -12,8 +12,7 @@
 
 (def cur-platform (cond (and (exists? js/window) (exists? js/document)) :browser
                         (and (exists? js/GLOBAL) (exists? js/Text) (exists? js/Image)) :rnative
-                        (and (exists? js/module) (exists? (.-exports js/module))) :node
-                        :else (throw (err "Not supported platform"))))
+                        (and (exists? js/module) (exists? (.-exports js/module))) :node))
 
 (def http
   "HTTP transport for the current platform. Accepts method, headers, body and url.
