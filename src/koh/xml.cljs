@@ -14,7 +14,7 @@
 (defn browser-xpath [html? string queries]
   (let [doc (.parseFromString (js/DOMParser.) string (if html? "text/html" "text/xml"))]
     (async/to-chan [(zipmap (keys queries)
-                           (map (partial find-nodes doc) (vals queries)))])))
+                            (map (partial find-nodes doc) (vals queries)))])))
 
 (defn rnative-xpath [html? s queries]
   (let [out (async/chan)
@@ -50,23 +50,39 @@
     (parser string html? cb)
     out))
 
-(defn browser-read-node [node]
+(defn read-node [filter-node-type attr-name-prop attr-val-prop node]
   (let [get-attr (fn[node]
                    (let [attr (.-attributes node)]
                      (reduce merge (map #(let [at (aget attr %)]
-                                           {(keyword (replace (.-nodeName at) ":" "/")) (.-nodeValue at)})
+                                           {(keyword (replace (aget at attr-name-prop) ":" "/")) (aget at attr-val-prop)})
                                         (range (.-length attr))))))
         get-childs (fn[node-list]
                      (let [childs (.call (aget js/Array "prototype" "slice") (.-childNodes node))]
-                       (map browser-read-node (filter #(not= (.-TEXT_NODE js/Node) (.-nodeType %)) childs))))]
+                       (map (partial read-node filter-node-type attr-name-prop attr-val-prop)
+                            (filter #(not= filter-node-type (.-nodeType %)) childs))))]
     {:tag (keyword (.-tagName node))
      :attrs (or (get-attr node) {})
      :content (if (and (= 1 (aget node "childNodes" "length"))
-                       (= (.-TEXT_NODE js/Node) (.-nodeType (aget (.-childNodes node) 0))))
+                       (= filter-node-type (.-nodeType (aget (.-childNodes node) 0))))
                 [(trim (.-textContent node))]
                 (get-childs node))}))
 
 (defn browser-parse [string html?]
   (let [doc (.parseFromString (js/DOMParser.) string (if html? "text/html" "text/xml"))
         root (.-documentElement doc)]
-    (async/to-chan [(browser-read-node root)])))
+    (async/to-chan [(read-node (.-TEXT_NODE js/Node)
+                               "nodeName"
+                               "nodeValue"
+                               root)])))
+
+(defn node-parse [string html?]
+  (let [require (.-require js/module)
+        node-xmldom (require "./xmldom")
+        dom (.-DOMParser node-xmldom)
+        doc (.parseFromString (dom.) string)
+        root (.-documentElement doc)
+        text-node-code 3]
+    (async/to-chan [(read-node text-node-code
+                               "name"
+                               "value"
+                               root)])))
