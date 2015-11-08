@@ -4,7 +4,7 @@ target 'kohRN', :exclusive => true do
     pod 'React/Core', '0.11.0'
     pod 'React/RCTNetwork','0.11.0'
     pod 'react-native-eval',:path => 'node_modules/react-native-eval'
-    pod 'react-native-xml', '0.2.0'
+    pod 'react-native-xml', '0.2.1'
 end
 
 target 'kohRNTests' do
