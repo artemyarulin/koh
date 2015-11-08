@@ -1,4 +1,4 @@
-# koh [![Circle CI](https://circleci.com/gh/artemyarulin/koh.svg?style=svg)](https://circleci.com/gh/artemyarulin/koh) 
+# koh [![Circle CI](https://circleci.com/gh/artemyarulin/koh.svg?style=svg)](https://circleci.com/gh/artemyarulin/koh)
 [![Clojars Project](http://clojars.org/koh/latest-version.svg)](http://clojars.org/koh)
 
 Container of all platform depended code for ClojureSript with support of browser, node and react-native environment
@@ -13,6 +13,7 @@ Container of all platform depended code for ClojureSript with support of browser
 - `http(method headers data url cb)` - makes an HTTP request with specified parameters. Returns `core.async` channel which would contains either `err` or response object
 - `xpath(html? string xpath-queries)` - runs xpath queries against string
 - `parse-xml(string html?)` - parses string as xml/html and returns same data structure as [data.xml](https://github.com/clojure/data.xml)
+- `to-xml(object)` - convert xml back to string
 
 # React Native
 

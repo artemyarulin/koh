@@ -3,7 +3,7 @@
             [koh.err :as err]
             [koh.json :as json]
             [koh.http :refer [node-http browser-http rnative-http]]
-            [koh.xml :refer [browser-xpath rnative-xpath node-xpath browser-parse rnative-parse node-parse]]))
+            [koh.xml :refer [browser-xpath rnative-xpath node-xpath browser-parse rnative-parse node-parse] :as xml]))
 
 (def parse-json json/parse-json)
 (def to-json json/to-json)
@@ -45,6 +45,10 @@
 (defmethod parse-xml :rnative [& args] (apply rnative-parse args))
 (defmethod parse-xml :node [& args] (apply node-parse args))
 (defmethod parse-xml :default [& args] (throw (err "Unsupported platform")))
+
+(def to-xml
+  "Converts object representation of xml and converts it back to string"
+  xml/to-xml)
 
 (defn enable-print! []
   "Enables printing to console"

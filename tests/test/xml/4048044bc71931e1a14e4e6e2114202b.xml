@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PrinterHost</key>
+	<string>localhost</string>
+	<key>PrinterID</key>
+	<string>Brother_HL_L9200CDW_series</string>
+	<key>PrinterName</key>
+	<string>Brother HL-L9200CDW series</string>
+</dict>
+</plist>

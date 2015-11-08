@@ -2,8 +2,9 @@
   "scripts": {
     "start": "./node_modules/react-native/packager/packager.sh --reset-cache --projectRoots $(PWD)/node_modules --root $(PWD)/js --assetRoots js",
     "build-react": "wget -O /tmp/react.js \"http://localhost:8081/index.ios.bundle?dev=0&minify=1\"",
-    "build-tests": "(cd .. && lein cljsbuild once integration-browser) && app=\"kohRNTests/js/tests.js\" && cat /tmp/react.js > $app && echo -e \"\n;;;\n\" >> $app && cat ../target/integration.app.js >> $app",
-    "build": "npm run build-react && npm run build-tests"
+    "build-tests": "(cd .. && rm -rf target && lein cljsbuild once integration-browser) && app=\"kohRNTests/js/tests.js\" && cat /tmp/react.js > $app && echo -e \"\n;;;\n\" >> $app && cat ../target/integration.app.js >> $app",
+    "build": "npm run build-react && npm run build-tests",
+    "test": "xcodebuild -workspace kohRN.xcworkspace -scheme kohRN -destination platform='iOS Simulator,OS=9.1,name=iPhone 6s' -sdk iphonesimulator clean build test"
   },
   "dependencies": {
     "react-native": "0.11.0",

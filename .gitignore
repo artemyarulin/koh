@@ -12,3 +12,10 @@ pom.xml.asc
 .nrepl-port
 figwheel_server.log
 .DS_Store
+kohRN/node_modules
+kohRN/Pods
+out
+node_modules
+kohRN/kohRN.xcodeproj/project.xcworkspace/xcuserdata
+kohRN/kohRN.xcodeproj/xcuserdata
+kohRN/kohRN.xcworkspace/xcuserdata

@@ -6,7 +6,8 @@
             [test.unit.core]
             [test.unit.xml]
             ;; Integration
-            [test.integration.http]))
+            [test.integration.http]
+            [test.integration.xml]))
 
 (enable-print!)
 
@@ -23,7 +24,8 @@
              'test.unit.xml))
 
 (defn ^:exrpot test-integration []
-  (doo-tests 'test.integration.http))
+  (doo-tests 'test.integration.http
+             'test.integration.xml))
 
 (case suite
   "unit" (test-unit)
