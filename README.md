@@ -1,4 +1,5 @@
-# koh [![Circle CI](https://circleci.com/gh/artemyarulin/koh.svg?style=svg)](https://circleci.com/gh/artemyarulin/koh)
+# koh [![Circle CI](https://circleci.com/gh/artemyarulin/koh.svg?style=svg)](https://circleci.com/gh/artemyarulin/koh) [![Downloads](https://jarkeeper.com/artemyarulin/koh/downloads.svg)](https://jarkeeper.com/artemyarulin/koh)
+
 [![Clojars Project](http://clojars.org/koh/latest-version.svg)](http://clojars.org/koh)
 
 Container of all platform depended code for ClojureSript with support of browser, node and react-native environment
