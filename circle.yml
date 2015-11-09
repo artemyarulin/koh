@@ -20,4 +20,4 @@ test:
     - lein doo node integration-node once
     - lein doo phantom unit-browser once
     - lein doo phantom integration-browser once
-    - cd kohRN && npm install && pod install && xcodebuild -workspace kohRN.xcworkspace -scheme kohRN -destination platform='iOS Simulator,OS=9.0,name=iPhone 6s' -sdk iphonesimulator test | xcpretty -c && exit ${PIPESTATUS[0]}
+    - cd kohRN && npm install && pod install && ONLY_ACTIVE_ARCH=NO xcodebuild -workspace kohRN.xcworkspace -scheme kohRN -destination platform='iOS Simulator,OS=9.0,name=iPhone 6s' -sdk iphonesimulator test | xcpretty -c && exit ${PIPESTATUS[0]}
