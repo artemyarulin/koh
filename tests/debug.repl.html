@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <script src="../target/repl.app.js" type="text/javascript"></script>
+    <script>
+      Object.keys(goog.dependencies_.nameToPath)
+          .filter(function(m) { return ["koh.","test."]
+                                            .some(function(p) { return m.indexOf(p) == 0 })})
+          .map(function(m) { goog.require(m) })
+    </script>
+  </body>
+</html>
