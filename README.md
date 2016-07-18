@@ -1,28 +1,32 @@
-# koh [![Circle CI](https://circleci.com/gh/artemyarulin/koh.svg?style=svg)](https://circleci.com/gh/artemyarulin/koh) [![Downloads](https://jarkeeper.com/artemyarulin/koh/downloads.svg)](https://jarkeeper.com/artemyarulin/koh)
+# koh
 
 [![Clojars Project](http://clojars.org/koh/latest-version.svg)](http://clojars.org/koh)
 
-Container of all platform depended code for ClojureSript with support of browser, node and react-native environment
+Set of cross platform helpers which works on JVM, in browser, on Node and in React Native environment.
 
-# Functions
+### koh.string
 
-- `err(str)` - returns platform depended error object (`js/Error` in case of JS environment)
-- `err?(obj)` - returns `true` if object an error
-- `enable-print!()` - enable printing to console
-- `parse-json(str)` - parses string and returns either parsed object or `err` object
-- `to-json(obj)` - converts object to JSON string
-- `http(method headers data url cb)` - makes an HTTP request with specified parameters. Returns `core.async` channel which would contains either `err` or response object
-- `xpath(html? string xpath-queries)` - runs xpath queries against string
-- `parse-xml(string html?)` - parses string as xml/html and returns same data structure as [data.xml](https://github.com/clojure/data.xml)
-- `to-xml(object)` - convert xml back to string
+- `displace [s & args]` - Replaces token like {0}, {1} in a string using supplied parameters
+- `str->int [def-value s]` - Converts string to int. If it's not possible - def-value returned instead
 
-# React Native
+### koh.environment
 
-Because RN using `JSCore` environments which is just a JavaScript interpreter and doesn't have many features from browser object model we have to use couple of additional RN plugins:
+- `platform` - Returns current execution platform. One of `:browser`, `:node`, `:rnative` or `:jvm`
 
-- [react-native-xml](https://github.com/artemyarulin/react-native-xml) - For making XPath queries. It is expected to have `GLOBAL.rnmxmlQueryHTML`,`GLOBAL.rnmxmlQueryXml` and `GLOBAL.rnmxmlParseString` to be available
-- [react-native-raw-http](https://github.com/artemyarulin/react-native-raw-http) - To get access to low level HTTP API. Not used yet, we are using standard `fetch` object for now
+### koh.xml
 
-# Clojure
+- `parse [string html? cb]` - Parses supplied string into XML tree, calling cb value with err and xml. html? flag supported on non JVM environment and allows to parse mailformed XML, such as HTML
 
-Definitely we will support it.
+
+### React Native
+
+Following library has to be installed for working with XML: [react-native-xml](https://github.com/artemyarulin/react-native-xml). It is expected to have `GLOBAL.rnmxmlParseString` to be available
+
+### Buck build system
+
+[Buck](https://buckbuild.com) is used as a build system with this library using support macroses from [clojure-clojurescript-buck](https://github.com/artemyarulin/clojure-clojurescript-buck).
+
+#### TODO
+
+- Build system concerns: Explain why Buck, how to build, how to test, how to contribute, explain that this it's extraction from monorepo(should we?)
+- Release to Clojars as a one `koh` library and as an each module separately
