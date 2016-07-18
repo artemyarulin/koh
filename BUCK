@@ -1,3 +1,11 @@
+cljc_module('environment',
+            tests = 'environment_test.cljc')
+
 cljc_module('string',
-            src = ['src/koh/string.cljc'],
-            tests = ['tests/test/unit/string_test.cljc'])
+            tests = 'string_test.cljc')
+
+cljc_module('xml',
+            src = ['xml.cljc','xml/client_parser.cljs','xml/server_parser.clj'],
+            tests = 'xml_test.cljc',
+            deps = '[org.clojure/data.xml "0.1.0-beta1"]',
+            modules = ':environment')
