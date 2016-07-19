@@ -17,6 +17,9 @@ Set of cross platform helpers which works on JVM, in browser, on Node and in Rea
 
 - `parse [string html? cb]` - Parses supplied string into XML tree, calling cb value with err and xml. html? flag supported on non JVM environment and allows to parse mailformed XML, such as HTML
 
+### koh.xml-p
+
+Provides same function as `koh.xml` module, but returns promises using [promesa](https://github.com/funcool/promesa) library
 
 ### React Native
 
