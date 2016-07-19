@@ -30,3 +30,4 @@ Following library has to be installed for working with XML: [react-native-xml](h
 
 - Build system concerns: Explain why Buck, how to build, how to test, how to contribute, explain that this it's extraction from monorepo(should we?)
 - Release to Clojars as a one `koh` library and as an each module separately
+- React native tests - we should create some helpers for Buck for that

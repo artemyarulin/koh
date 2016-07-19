@@ -44,7 +44,7 @@
             _ (parse input false #(deliver p [%1 %2]))
             [err actual] @p]
         (is nil? err)
-        (is (.equals (first actual) expected) (first actual))))))
+        (is (.equals actual expected))))))
 
 #?(:cljs
   (deftest parse-test (async done
