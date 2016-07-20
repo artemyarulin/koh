@@ -1,4 +1,4 @@
-(ns koh.xml.server-parser
+(ns koh.xml.parser-server
   (:require [clojure.data.xml :refer [parse]]))
 
 (defn parser [string html? cb]

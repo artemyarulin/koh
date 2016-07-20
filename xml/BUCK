@@ -1,0 +1,13 @@
+cljc_module('xml',
+            src = ['xml.cljc',
+                   'parser_client.cljs',
+                   'parser_server.clj'],
+            tests = 'xml_test.cljc',
+            modules = '//lib/koh:environment',
+            deps = '[org.clojure/data.xml "0.1.0-beta1"]')
+
+cljc_module('xml-p',
+            src = 'xml_p.cljc',
+            tests = 'xml_p_test.cljc',
+            modules = ':xml',
+            deps = '[funcool/promesa "1.4.0"]')

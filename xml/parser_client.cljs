@@ -1,4 +1,4 @@
-(ns koh.xml.client-parser
+(ns koh.xml.parser-client
   (:require [clojure.string :refer [trim replace blank?]]
             [clojure.walk :refer [postwalk]]
             [koh.environment :refer [platform]]))
