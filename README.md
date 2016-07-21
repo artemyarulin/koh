@@ -21,6 +21,10 @@ Set of cross platform helpers which works on JVM, in browser, on Node and in Rea
 
 Provides same function as `koh.xml` module, but returns promises using [promesa](https://github.com/funcool/promesa) library
 
+### koh.test
+
+- `async` - Async test helpers which uniform way of working with async functions from CLJC envionment
+
 ### React Native
 
 Following library has to be installed for working with XML: [react-native-xml](https://github.com/artemyarulin/react-native-xml). It is expected to have `GLOBAL.rnmxmlParseString` to be available
