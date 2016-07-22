@@ -5,8 +5,7 @@
   "Async test helper which uniform way of working with async functions
   from CLJC envionment. Accept function and callback which would be
   applied to that function"
-  #?(:clj (let [out (promise) handler (fn[&
-                                          args]
+  #?(:clj (let [out (promise) handler (fn[& args]
                                         (apply cb args)
                                         (deliver out args))]
             (f handler)
