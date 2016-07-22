@@ -8,7 +8,7 @@
   #?(:clj (let [out (promise) handler (fn[&
                                           args]
                                         (apply cb args)
-                                        (deliver out nil))]
+                                        (deliver out args))]
             (f handler)
             @out)
      :cljs (cljs.test/async done
