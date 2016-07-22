@@ -1,7 +1,8 @@
 (ns koh.xml-test
   (:require #?(:clj [clojure.test :refer [is are deftest]]
-               :cljs [cljs.test :refer-macros [is are deftest async]])
-            [koh.xml :refer [parse]]))
+               :cljs [cljs.test :refer-macros [is are deftest]])
+            [koh.xml :refer [parse]]
+            [koh.test :refer [async async-all]]))
 
 (def tests {"<doc a='V'>V2</doc>" {:tag :doc
                                    :attrs {:a "V"}
@@ -37,22 +38,9 @@
                                 :attrs {:xmlns "http://schemas.microsoft.com/exchange/services/2006/messages"}
                                 :content ["20"]}]} })
 
-#?(:clj
-  (deftest parse-test
-    (for [[input expected] tests]
-      (let [p (promise)
-            _ (parse input false #(deliver p [%1 %2]))
-            [err actual] @p]
-        (is nil? err)
-        (is (.equals actual expected))))))
-
-#?(:cljs
-  (deftest parse-test (async done
-    (letfn [(handler [input expected cases err actual]
-              (when input
-                (is (nil? err))
-                (is (= actual expected)))
-              (if-let [[t-input t-expected] (first cases)]
-                (parse t-input false (partial handler t-input t-expected (rest cases)))
-                (done)))]
-      (handler nil nil tests nil nil)))))
+((deftest parse-test
+   (async-all (for [[input expected] tests]
+     [(partial parse input false)
+      (fn[err actual]
+        (is (nil? err))
+        (is (#?(:clj .equals :cljs =) expected actual)))]))))
