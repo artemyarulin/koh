@@ -38,9 +38,9 @@
                                 :attrs {:xmlns "http://schemas.microsoft.com/exchange/services/2006/messages"}
                                 :content ["20"]}]} })
 
-((deftest parse-test
+(deftest parse-test
    (async-all (for [[input expected] tests]
      [(partial parse input false)
       (fn[err actual]
         (is (nil? err))
-        (is (#?(:clj .equals :cljs =) expected actual)))]))))
+        (is (#?(:clj .equals :cljs =) expected actual)))])))
