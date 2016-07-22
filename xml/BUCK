@@ -3,7 +3,8 @@ cljc_module('xml',
                    'parser_client.cljs',
                    'parser_server.clj'],
             tests = 'xml_test.cljc',
-            modules = '//lib/koh:environment',
+            modules = ['//lib/koh:environment',
+                       '//lib/koh:test'],
             deps = '[org.clojure/data.xml "0.1.0-beta1"]')
 
 cljc_module('xml-p',
