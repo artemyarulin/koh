@@ -2,11 +2,11 @@ cljc_module('http',
             src = ['http.cljc',
                    'transport_client.cljs',
                    'transport_server.clj'],
-            tests = 'http_test.cljc',
-            modules = '//lib/koh:environment',
-            deps = '[clj-http "2.0.1"]')
+            itests = 'http_test.cljc',
+            modules = ['//lib/koh:environment',
+                       '//ext:clj-http'])
 
 cljc_module('http-p',
-            tests = 'http_p_test.cljc',
-            modules = ':http',
-            deps = '[funcool/promesa "1.4.0"]')
+            itests = 'http_p_test.cljc',
+            modules = [':http',
+                       '//ext:funcool/promesa'])

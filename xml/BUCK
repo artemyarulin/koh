@@ -2,13 +2,12 @@ cljc_module('xml',
             src = ['xml.cljc',
                    'parser_client.cljs',
                    'parser_server.clj'],
-            tests = 'xml_test.cljc',
+            itests = 'xml_test.cljc',
             modules = ['//lib/koh:environment',
-                       '//lib/koh:test'],
-            deps = '[org.clojure/data.xml "0.1.0-beta1"]')
+                       '//lib/koh:test',
+                       '//ext:org.clojure/data.xml'])
 
 cljc_module('xml-p',
-            src = 'xml_p.cljc',
-            tests = 'xml_p_test.cljc',
-            modules = ':xml',
-            deps = '[funcool/promesa "1.4.0"]')
+            itests = 'xml_p_test.cljc',
+            modules = [':xml',
+                       '//ext:funcool/promesa'])
