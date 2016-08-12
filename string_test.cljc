@@ -1,6 +1,5 @@
 (ns koh.string-test
-  (:require #?(:clj [clojure.test :refer [is are deftest]]
-               :cljs [cljs.test :refer-macros [is are deftest]])
+  (:require [clojure.test :refer [is are deftest]]
             [koh.string :refer [displace str->int]]))
 
 (deftest displace-t

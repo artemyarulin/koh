@@ -1,6 +1,5 @@
 (ns koh.xml-test
-  (:require #?(:clj [clojure.test :refer [is are deftest]]
-               :cljs [cljs.test :refer-macros [is are deftest]])
+  (:require [clojure.test :refer [is are deftest]]
             [koh.xml :refer [parse]]
             [koh.test :refer [async async-all]]))
 
