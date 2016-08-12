@@ -1,6 +1,5 @@
 (ns koh.http-test
-  (:require #?(:clj [clojure.test :refer [is are deftest]]
-               :cljs [cljs.test :refer-macros [is are deftest]])
+  (:require [clojure.test :refer [is are deftest]]
             [koh.http :refer [request]]))
 
 ;; (deftest http-test (async done (go

@@ -1,6 +1,5 @@
 (ns koh.test-test
-  (:require #?(:clj [clojure.test :refer [deftest are is]]
-               :cljs [cljs.test :refer-macros [is are deftest]])
+  (:require [clojure.test :refer [deftest are is]]
             [koh.test :refer [async async-all]]))
 
 (defn f-cb [v cb] (cb v))

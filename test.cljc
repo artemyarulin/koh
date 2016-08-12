@@ -1,5 +1,4 @@
-(ns koh.test
-  #?(:cljs (:require [cljs.test])))
+(ns koh.test (:require [clojure.test]))
 
 (defn async [f cb]
   "Async test helper which uniform way of working with async functions
