@@ -16,3 +16,8 @@
     #?(:clj (Integer. n)
        :cljs (js/parseInt n 10))
     def-value))
+
+(defn date-time []
+  "Returns current date time as a string in ISO format"
+  #?(:cljs (.toISOString (js/Date.))
+     :clj (str (java.time.LocalDateTime/now))))
