@@ -1,12 +1,17 @@
 (ns koh.http.transport-client
   (:require [koh.environment :refer [platform]]))
 
+(defn ensure-body-string [body]
+  (if (or (nil? body) (string? body))
+    body
+    (->> body clj->js (.stringify js/JSON))))
+
 (defn node-http [method headers body url cb]
   "NodeJS transport. Using standard http.request API"
   (let [require (.-require js/module)
         node-http (require "http")
         node-url (require "url")
-        headers (if body (assoc headers "Content-Length" (count body)) headers)
+        headers (if body (assoc headers "Content-Length" (count (ensure-body-string body))) headers)
         parsed-url (.parse node-url url)
         err-handler #(cb %1 nil)
         handler (fn[resp](let [data (atom "")]
@@ -17,7 +22,7 @@
                                         "hostname" (.-hostname parsed-url)
                                         "path" (.-path parsed-url)
                                         "headers" (clj->js headers)) handler)]
-    (when body (.write req body))
+    (when body (.write req (ensure-body-string body)))
     (.on req "error" err-handler)
     (.end req)))
 
@@ -35,14 +40,14 @@
     (aset req "onreadystatechange" result-handler)
     (.open req method url true)
     (doseq [[k v] headers] (.setRequestHeader req (name k) v))
-    (.send req body)))
+    (.send req (ensure-body-string body))))
 
 (defn rnative-http [method headers body url cb]
   "React native HTTP transport. For now we rely on standard fetch
   function, later on we will move to react-native-raw-http"
   (let [props-base {:method method :headers (clj->js headers)}
         props (if body
-                (assoc props-base :body body)
+                (assoc props-base :body (ensure-body-string body))
                 props-base)
         req (js/fetch url (clj->js props))]
     (.catch req #(cb (ex-info (.-message %) {})))

@@ -4,7 +4,8 @@ cljc_module('http',
                    'transport_server.clj'],
             itests = 'http_test.cljc',
             modules = ['//lib/koh:environment',
-                       '//ext:clj-http'])
+                       '//ext:clj-http',
+                       '//ext:org.clojure/data.json'])
 
 cljc_module('http-p',
             itests = 'http_p_test.cljc',
