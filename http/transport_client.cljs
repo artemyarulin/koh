@@ -57,4 +57,4 @@
                  :browser browser-http
                  :rnative rnative-http
                  :node node-http
-                 :default (throw (js/Error. "Unsupported platform"))))
+                 #(throw (js/Error. "Unsupported platform"))))

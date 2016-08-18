@@ -63,4 +63,4 @@
               :browser browser-parse
               :rnative rnative-parse
               :node node-parse
-              :default (throw (js/Error. "Unsupported platform"))))
+              #(throw (js/Error. "Unsupported platform"))))
