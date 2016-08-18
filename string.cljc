@@ -1,5 +1,7 @@
 (ns koh.string
-  (:require [clojure.string :as string]))
+  (:require [clojure.string :as string]
+            #?(:cljs [goog.crypt.base64 :as base64]
+               :clj [clojure.data.codec.base64 :as base64])))
 
 (defn displace [s & args]
   "Replaces token like {0}, {1} in a string using supplied parameters"
@@ -21,3 +23,14 @@
   "Returns current date time as a string in ISO format"
   #?(:cljs (.toISOString (js/Date.))
      :clj (str (java.time.LocalDateTime/now))))
+
+(defn str->base64 [s]
+  "Returns Base64 encoded representation of string"
+  #?(:cljs (base64/encodeString s)
+     :clj (String. (base64/encode (.getBytes s)) "UTF-8")))
+
+(defn base64->str [s]
+  "Decode string from Base64 encoded string. "
+  #?(:cljs (base64/decodeString s)
+     :clj (try (String. (base64/decode (.getBytes s)) "UTF-8")
+               (catch Exception e ""))))
