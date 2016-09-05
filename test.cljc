@@ -1,19 +1,21 @@
 (ns koh.test (:require [clojure.test]))
 
-(defn async [f cb]
+(defn async [f & cbs]
   "Async test helper which uniform way of working with async functions
-  from CLJC envionment. Accept function and callback which would be
+  from CLJC envionment. Accept function and callbacks which would be
   applied to that function"
-  #?(:clj (let [out (promise) handler (fn[& args]
-                                        (apply cb args)
-                                        (deliver out args))]
-            (f handler)
+  #?(:clj (let [out (promise)
+                handlers (->> cbs (map #(fn[& args]
+                                          (apply % args)
+                                          (deliver out args))))]
+            (apply f handlers)
             @out)
+
      :cljs (cljs.test/async done
-                            (let [handler (fn[& args]
-                                            (apply cb args)
-                                            (done))]
-                              (f handler)))))
+                            (let [handlers (->> cbs (map #(fn[& args]
+                                                            (apply % args)
+                                                            (done))))]
+                              (apply f handlers)))))
 
 (defn async-all [xs]
   "Async test helper which uniform way of working with async functions
