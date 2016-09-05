@@ -11,5 +11,5 @@
                                  (write-str body))
                          :url url
                          :throw-exceptions false})]
-      (cb nil {(:status resp) (:body resp)}))
+      (cb nil (select-keys resp [:status :body :headers])))
     (catch Exception e (cb e nil))))

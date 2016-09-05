@@ -17,7 +17,9 @@
         handler (fn[resp](let [data (atom "")]
                            (.on resp "data" #(swap! data str %))
                            (.on resp "error" err-handler)
-                           (.on resp "end" #(cb nil {(.-statusCode resp) @data}))))
+                           (.on resp "end" #(cb nil {:status (.-statusCode resp)
+                                                     :body @data
+                                                     :headers (js->clj (.-headers resp))}))))
         req (.request node-http (js-obj "method" method
                                         "hostname" (.-hostname parsed-url)
                                         "path" (.-path parsed-url)
@@ -36,7 +38,9 @@
                                 resp-text (.-responseText req)]
                             (if (zero? resp-code)
                               (cb (ex-info (str "Request failed: " resp-code resp-text) {}) nil)
-                              (cb nil {resp-code resp-text}))))]
+                              (cb nil {:status resp-code
+                                       :body resp-text
+                                       :headers {}}))))] ;;TODO: getAllResponseHeaders returns string and we have to parse it somehow
     (aset req "onreadystatechange" result-handler)
     (.open req method url true)
     (doseq [[k v] headers] (.setRequestHeader req (name k) v))
@@ -51,7 +55,9 @@
                 props-base)
         req (js/fetch url (clj->js props))]
     (.catch req #(cb (ex-info (.-message %) {})))
-    (.then req (fn[resp](.then (.text resp) (fn[data](cb nil {(.-status resp) data})))))))
+    (.then req (fn[resp](.then (.text resp) (fn[data](cb nil {:status (.-status resp)
+                                                              :body data
+                                                              :headers {}}))))))) ;;TODO: response.headers.entires() should be used here
 
 (def transport (case platform
                  :browser browser-http
