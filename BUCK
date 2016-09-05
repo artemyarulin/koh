@@ -8,3 +8,6 @@ cljc_module('string',
 cljc_module('test',
             tests = 'test_test.cljc')
 cljc_module('err', tests = 'err_test.cljc')
+cljc_module('time',
+            tests = 'time_test.cljc',
+            test_modules = ':test')
