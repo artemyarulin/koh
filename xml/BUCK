@@ -4,8 +4,8 @@ cljc_module('xml',
                    'parser_server.clj'],
             itests = 'xml_test.cljc',
             modules = ['//lib/koh:environment',
-                       '//lib/koh:test',
-                       '//ext:org.clojure/data.xml'])
+                       '//ext:org.clojure/data.xml'],
+            test_modules = '//lib/koh:test')
 
 cljc_module('xml-p',
             itests = 'xml_p_test.cljc',
