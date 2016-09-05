@@ -3,7 +3,6 @@
             [clojure.walk :refer [postwalk]]
             [koh.environment :refer [platform]]))
 
-;; TODO: Now when we have all the tests - refactor this piece of shit
 (defn read-node [filter-node-type attr-name-prop attr-val-prop node]
   (let [get-attr (fn[node]
                    (if-let [attr (.-attributes node)]
@@ -28,21 +27,11 @@
                       [text-content]))
                   (get-childs node))})))
 
-(defn rnative-parse [string html? cb]
-  (let [parser js/rnmxmlParseString
-        keywordize-tags (fn[data](postwalk #(if (:tag %)
-                                              (assoc % :tag (keyword (:tag %)))
-                                              %) data))
-        handler (fn[err results]
-                  (if (instance? js/Error err)
-                    (cb err nil)
-                    (cb nil (keywordize-tags (js->clj results :keywordize-keys true)))))]
-    (parser string html? handler)))
-
 (defn browser-parse [string html? cb]
   (let [doc (.parseFromString (js/DOMParser.) string (if html? "text/html" "text/xml"))
-        root (.-documentElement doc)]
-    (cb nil (read-node (.-TEXT_NODE js/Node)
+        root (.-documentElement doc)
+        text-node 3] ;; Node.TEXT_NODE value, but xmldom doesn't expose it, so we use constant
+    (cb nil (read-node text-node
                        "nodeName"
                        "nodeValue"
                        root))))
@@ -61,6 +50,9 @@
 
 (def parser (case platform
               :browser browser-parse
-              :rnative rnative-parse
+              ;; For RN environment we rely on xmldom library
+              ;; Make sure that you npm install xmldom and expose it as global like
+              ;; (aset js/window "DOMParser" (.-DOMParser (js/require "xmldom")))
+              :rnative browser-parse
               :node node-parse
               #(throw (js/Error. "Unsupported platform"))))
