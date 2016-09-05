@@ -1,6 +1,6 @@
 (ns koh.string-test
   (:require [clojure.test :refer [is are deftest]]
-            [koh.string :refer [displace str->int date-time str->base64 base64->str]]))
+            [koh.string :refer [displace str->int str->base64 base64->str]]))
 
 (deftest displace-t
   (is (= (displace "Hello {0}" "world") "Hello world"))
@@ -16,10 +16,6 @@
     42 "" 42
     42 nil 42
     -1 "011" 11))
-
-(deftest date-time-test
-  (is (date-time))
-  (is (string? (date-time))))
 
 (deftest base64-test
   (is (= "Hello" (-> "Hello" str->base64 base64->str)))
