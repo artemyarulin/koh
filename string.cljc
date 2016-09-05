@@ -19,11 +19,6 @@
        :cljs (js/parseInt n 10))
     def-value))
 
-(defn date-time []
-  "Returns current date time as a string in ISO format"
-  #?(:cljs (.toISOString (js/Date.))
-     :clj (str (java.time.LocalDateTime/now))))
-
 (defn str->base64 [s]
   "Returns Base64 encoded representation of string"
   #?(:cljs (base64/encodeString s)
