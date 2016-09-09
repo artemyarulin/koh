@@ -29,12 +29,13 @@
 
 (defn browser-parse [string html? cb]
   (let [doc (.parseFromString (js/DOMParser.) string (if html? "text/html" "text/xml"))
-        root (.-documentElement doc)
         text-node 3] ;; Node.TEXT_NODE value, but xmldom doesn't expose it, so we use constant
-    (cb nil (read-node text-node
-                       "nodeName"
-                       "nodeValue"
-                       root))))
+    (if doc
+      (cb nil (read-node text-node
+                         "nodeName"
+                         "nodeValue"
+                         (.-documentElement doc)))
+      (cb (ex-info "Error parsing xml" {:xml string :html? html?}) nil))))
 
 (defn node-parse [string html? cb]
   (let [require (.-require js/module)
